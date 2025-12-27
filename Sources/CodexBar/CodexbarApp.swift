@@ -17,7 +17,7 @@ struct CodexBarApp: App {
         let env = ProcessInfo.processInfo.environment
         let level = CodexBarLog.parseLevel(env["CODEXBAR_LOG_LEVEL"]) ?? .info
         CodexBarLog.bootstrapIfNeeded(.init(
-            destination: .oslog(subsystem: "com.steipete.codexbar"),
+            destination: .oslog(subsystem: "com.oppotato.codexbar"),
             level: level,
             json: false))
 

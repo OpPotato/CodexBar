@@ -10,7 +10,7 @@ source "$HOME/Projects/agent-scripts/release/sparkle_lib.sh"
 APPCAST="$ROOT/appcast.xml"
 APP_NAME="CodexBar"
 ARTIFACT_PREFIX="CodexBar-"
-BUNDLE_ID="com.steipete.codexbar"
+BUNDLE_ID="com.oppotato.codexbar"
 TAG="v${MARKETING_VERSION}"
 
 err() { echo "ERROR: $*" >&2; exit 1; }
