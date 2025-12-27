@@ -39,6 +39,43 @@ swift build -c release          # or debug for development
 open CodexBar.app
 ```
 
+## Development: Rebuild & Relaunch
+
+After making changes to the code, use these commands to rebuild and test:
+
+### Quick rebuild (recommended)
+```bash
+./Scripts/compile_and_run.sh
+```
+This script automatically:
+- Kills any running CodexBar instances
+- Builds and tests the project
+- Packages the app
+- Relaunches CodexBar
+- Verifies the app stays running
+
+### Manual rebuild steps
+```bash
+# 1. Build the project
+swift build -c release
+
+# 2. Package the app
+./Scripts/package_app.sh
+
+# 3. Kill any running instances
+pkill -x CodexBar || true
+
+# 4. Launch the new version
+open -n CodexBar.app
+```
+
+### Verify the app is running
+```bash
+ps aux | grep -i codexbar | grep -v grep
+```
+
+You should see the CodexBar process with the full path to your local build.
+
 ## Adding a provider
 - Start here: `docs/provider.md` (provider authoring guide + target architecture).
 
