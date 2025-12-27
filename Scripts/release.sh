@@ -8,8 +8,8 @@ source "$ROOT/version.env"
 source "$HOME/Projects/agent-scripts/release/sparkle_lib.sh"
 
 APPCAST="$ROOT/appcast.xml"
-APP_NAME="CodexBar"
-ARTIFACT_PREFIX="CodexBar-"
+APP_NAME="CodexBar+"
+ARTIFACT_PREFIX="CodexBar+-"
 BUNDLE_ID="com.oppotato.codexbar"
 TAG="v${MARKETING_VERSION}"
 

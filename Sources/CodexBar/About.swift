@@ -21,14 +21,18 @@ func showAbout() {
         ])
     }
 
-    let credits = NSMutableAttributedString(string: "Peter Steinberger — MIT License\n")
-    credits.append(makeLink("GitHub", urlString: "https://github.com/steipete/CodexBar"))
-    credits.append(separator)
-    credits.append(makeLink("Website", urlString: "https://steipete.me"))
-    credits.append(separator)
-    credits.append(makeLink("Twitter", urlString: "https://twitter.com/steipete"))
-    credits.append(separator)
-    credits.append(makeLink("Email", urlString: "mailto:peter@steipete.me"))
+    let credits = NSMutableAttributedString(string: "Custom Fork with All Providers Enabled\n\n")
+    credits.append(NSAttributedString(string: "Based on ", attributes: [
+        .font: NSFont.systemFont(ofSize: NSFont.smallSystemFontSize),
+    ]))
+    credits.append(makeLink("CodexBar", urlString: "https://github.com/steipete/CodexBar"))
+    credits.append(NSAttributedString(string: " by Peter Steinberger (MIT License)\n\n", attributes: [
+        .font: NSFont.systemFont(ofSize: NSFont.smallSystemFontSize),
+    ]))
+    credits.append(NSAttributedString(string: "Fork: ", attributes: [
+        .font: NSFont.systemFont(ofSize: NSFont.smallSystemFontSize),
+    ]))
+    credits.append(makeLink("OpPotato/CodexBar", urlString: "https://github.com/OpPotato/CodexBar"))
     if let buildTimestamp, let formatted = formattedBuildTimestamp(buildTimestamp) {
         var builtLine = "Built \(formatted)"
         if let gitCommit, !gitCommit.isEmpty, gitCommit != "unknown" {
@@ -45,7 +49,7 @@ func showAbout() {
     }
 
     let options: [NSApplication.AboutPanelOptionKey: Any] = [
-        .applicationName: "CodexBar",
+        .applicationName: "CodexBar+",
         .applicationVersion: versionString,
         .version: versionString,
         .credits: credits,

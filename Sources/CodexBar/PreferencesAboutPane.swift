@@ -47,7 +47,7 @@ struct AboutPane: View {
             }
 
             VStack(spacing: 2) {
-                Text("CodexBar")
+                Text("CodexBar+")
                     .font(.title3).bold()
                 Text("Version \(self.versionString)")
                     .foregroundStyle(.secondary)
@@ -56,19 +56,23 @@ struct AboutPane: View {
                         .font(.footnote)
                         .foregroundStyle(.secondary)
                 }
-                Text("May your tokens never run out—keep Codex limits in view.")
+                Text("Custom fork with all providers enabled")
                     .font(.footnote)
                     .foregroundStyle(.secondary)
             }
 
             VStack(alignment: .center, spacing: 10) {
+                Text("Based on CodexBar by Peter Steinberger (MIT License)")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
                 AboutLinkRow(
                     icon: "chevron.left.slash.chevron.right",
-                    title: "GitHub",
+                    title: "Original Repository",
                     url: "https://github.com/steipete/CodexBar")
-                AboutLinkRow(icon: "globe", title: "Website", url: "https://steipete.me")
-                AboutLinkRow(icon: "bird", title: "Twitter", url: "https://twitter.com/steipete")
-                AboutLinkRow(icon: "envelope", title: "Email", url: "mailto:peter@steipete.me")
+                AboutLinkRow(
+                    icon: "arrow.branch",
+                    title: "This Fork",
+                    url: "https://github.com/OpPotato/CodexBar")
             }
             .padding(.top, 8)
             .frame(maxWidth: .infinity)
@@ -88,7 +92,7 @@ struct AboutPane: View {
                     .foregroundStyle(.secondary)
             }
 
-            Text("© 2025 Peter Steinberger. MIT License.")
+            Text("Fork by OpPotato • Original © 2025 Peter Steinberger")
                 .font(.footnote)
                 .foregroundStyle(.secondary)
                 .padding(.top, 4)
@@ -113,7 +117,7 @@ struct AboutPane: View {
     }
 
     private func openProjectHome() {
-        guard let url = URL(string: "https://github.com/steipete/CodexBar") else { return }
+        guard let url = URL(string: "https://github.com/OpPotato/CodexBar") else { return }
         NSWorkspace.shared.open(url)
     }
 }
